@@ -1,0 +1,8 @@
+terraform init
+terraform plan
+terraform apply --auto-approve
+terraform destroy
+
+awscli  commands
+To create default subnet:
+aws ec2 create-default-subnet --availability-zone us-east-1a
