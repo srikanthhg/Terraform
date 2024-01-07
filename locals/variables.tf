@@ -1,3 +1,8 @@
+variable "isProd" {
+  type = bool
+  default = false
+}
+
 variable "instance_names" {
     type = list
     default =  ["MongoDB", "Redis", "Mysql", "RabbitMQ", "Catalogue", "Cart", "User", "Shipping", "payments", "Dispatch", "Web"]

@@ -1,3 +1,6 @@
+# foreach loop is ued to iterate maps
+# count loop is used to iterate list
+
 resource "aws_instance" "web" {
   # count = 11  
   count = length(var.instance_names)
