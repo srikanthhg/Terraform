@@ -1,4 +1,4 @@
-# foreach loop is ued to iterate maps
+# foreach loop is used to iterate maps
 # count loop is used to iterate list
 
 resource "aws_instance" "web" {
@@ -8,8 +8,9 @@ resource "aws_instance" "web" {
   instance_type = var.instance_names[count.index] == "MongoDB" || var.instance_names[count.index] == "Mysql" || var.instance_names[count.index] == "Shipping"  ? "t3.small" : "t2.micro"
   
   tags = {
-    Name = "web-${count.index+1}"
-    Component = var.instance_names[count.index]
+    Name = var.instance_names[count.index]
+    # Name = "web-${count.index+1}"
+    # Component = var.instance_names[count.index]
   }
 }
 

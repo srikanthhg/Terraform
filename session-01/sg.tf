@@ -13,7 +13,7 @@ resource "aws_security_group" "roboshop_all" {
   }
 
   egress {
-    from_port        = 0
+    from_port        = 0 # zero means allow all ports
     to_port          = 0
     protocol         = "-1"
     cidr_blocks      = ["0.0.0.0/0"]

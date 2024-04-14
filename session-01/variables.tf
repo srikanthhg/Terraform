@@ -39,11 +39,12 @@ variable "cidr_blocks"{
   default = ["0.0.0.0/0"]
 }
 
-# if we want to overwrite variable values here, we can write those values in terraform.tfvars
+# if we want to override variable values here, we can write those values in terraform.tfvars
 # terraform plan -var="instance_type=t3.medium"
 # terraform plan -var-file="production.tfvars"
 # variables precedence:
 # 1. command line,
 # 2. -var-file
 # 3. terraform.tfvars
-# 4. ENV variables: set TF_VAR_instance_type=t3.xlarge (if it is windows we can set environment variable like this, in linux we can use export)
+# 4. export TF_VAR_instance_type=t3.xlarge for linux, ENV variables: set TF_VAR_instance_type=t3.xlarge (if it is windows we can set environment variable like this, in linux we can use export here TF_VAR is mandatory)
+# if the value is not available in above four points then terraform will prompt

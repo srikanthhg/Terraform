@@ -6,7 +6,8 @@ resource "aws_route53_record" "records" {
   # count = 11
   count = length(var.instance_names) 
   zone_id = aws_route53_zone.primary.zone_id
-  name    = "${var.instance_names[count.index]}.${var.domain-name}" # interpolation, mixing text with variable (general concept not a terraform concept)
+  # name    = "${var.instance_names[count.index]}.skanth306.xyz" # interpolation, mixing text with variable (general concept not a terraform concept)
+  name    = "${var.instance_names[count.index]}.${var.domain-name}" 
   type    = "A"
   ttl     = 1
   # records = [aws_instance.web[count.index].private_ip]
