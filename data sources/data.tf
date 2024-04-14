@@ -1,7 +1,7 @@
 data "aws_ami" "centos" {
   most_recent      = true
-  owners = ["973714476881"]
-  # owners           = ["137112412989"]
+  owners = ["973714476881"] 
+  # owners           = ["137112412989"] # account ID
 
   filter {
     name   = "name"
@@ -24,4 +24,4 @@ data "aws_vpc" "default" {
     default = true
 }
 
-# data sources: it is useful to query the dynamic data from the provider as well as to query the existing resources info. using that info we can create other resources.
+# data sources: it is useful to query the dynamic data from the provider as well as to query the existing resources(manually created) info. using that info we can create other resources.

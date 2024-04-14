@@ -1,3 +1,3 @@
-# foreach loop is ued to iterate maps
+# foreach loop is used to iterate maps
 # count loop is used to iterate list
 
