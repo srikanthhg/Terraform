@@ -1,12 +1,10 @@
-data "aws_ami" "centos" {
+data "aws_ami" "centos8" {
   most_recent      = true
-  owners = ["973714476881"] 
-  # owners           = ["137112412989"] # account ID
+  owners           = ["973714476881"]
 
   filter {
     name   = "name"
     values = ["Centos-8-DevOps-Practice"]
-    # values = ["amzn2-ami-kernel-5.10-hvm-*-arm64-gp2"]
   }
 
   filter {
@@ -21,14 +19,15 @@ data "aws_ami" "centos" {
 }
 
 data "aws_vpc" "default" {
-    default = true
+  default = true
 }
 
-data "aws_subnet" "selected" {
+data "aws_subnet" "default" {
   vpc_id = data.aws_vpc.default.id
   availability_zone = "us-east-1a"
+  
 }
-
 data "aws_ssm_parameter" "vpn_sg_id" {
-  name = "/${var.project_name}/${var.environment}/vpn_sg_id"
+  name  = "/${var.project_name}/${var.environment}/vpn_sg_id"
+
 }

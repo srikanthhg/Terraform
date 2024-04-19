@@ -17,7 +17,7 @@ variable "environment" {
   type    = string
   default = "dev"
 }
-variable "momngodb_sg_ingress_rules" {
+variable "mongodb_sg_ingress_rules" {
     type = list
     default = [
        {

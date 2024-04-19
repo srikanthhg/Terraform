@@ -1,17 +1,15 @@
-variable "common_tags" {
-  type = map
-  default = {
-    project = "roboshop"
-    Environment = "dev"
-    Terraform = "true"
-  }
+variable "common_tags"{
+    default = {
+        project = "roboshop",
+        terraform = "true",
+        environment = "dev"
+    }
 }
 
-variable "project_name" {
-  type    = string
-  default = "roboshop"
+variable "project_name"{
+    default = "roboshop"
 }
-variable "environment" {
-  type    = string
-  default = "dev"
+
+variable "environment"{
+    default = "dev"
 }
